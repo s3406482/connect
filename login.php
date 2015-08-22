@@ -35,12 +35,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	// this will check if email or username already exists
 	foreach($result as $row)
 	{
-		if($row['userName'] == "$userName" && $row['password'] == "$password" )
+		if($row['userName'] == "$userName" && password_verify($password, $row['password']) )
 		{
 			$_SESSION["username"] = $row['userName'];
 			$check++;
 		}
-		if($row['email'] == "$username" && $row['password'] == "$password" )
+		if($row['email'] == "$userName" && password_verify($password, $row['password']) )
 		{
 			$_SESSION["username"] = $row['userName'];
 			$check++;

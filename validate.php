@@ -81,12 +81,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	// the registration is successful and the user session will be saved, the user data will 
 	// also be stored in the database
 	if($usernameErr == "" && $passwordErr == "" && $emailErr == "" )
-	{
+	{	
+		$hashPass = password_hash($password, PASSWORD_DEFAULT);
 		$_SESSION["message"] = "Registration Successful!!!";
 		$_SESSION["username"] = "$userName";
 		$stmt = $conn->prepare("INSERT INTO  `data`.`User` (
 					`userID` ,`userName` ,`email` ,`password` ,`posts` ,`rankID`)
-					VALUES ('$id',  '$userName',  '$email',  '$password',  '0',  '1')");
+					VALUES ('$id',  '$userName',  '$email',  '$hashPass',  '0',  '1')");
 		$stmt->execute();
 
 	}
