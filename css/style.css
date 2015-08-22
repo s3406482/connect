@@ -1,0 +1,57 @@
+h1
+{
+	vertical-align:top;
+	height: 100px;
+	background-color:blue;
+	font-size:75px;
+}
+a:link{
+	color: yellow;
+	text-decoration: none;
+}
+a:visited{
+	color:gold;
+	text-decoration: none;
+}
+a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+p#navbar
+{
+	font-size: 20px;
+	background-color: blue;
+	color:black;
+	height:250px;
+
+
+}
+div#nav
+{
+	height:250px;
+	width: 200px;
+	color:black;
+	display: inline-block;
+
+
+}
+div#nav,
+div#content
+{
+	display: inline-block;
+
+}
+
+div#content
+{
+	
+	box-sizing: border-box;
+	vertical-align:top;
+	padding-left:10px;
+	text-align: left;
+	color:black;
+	width: 500px;
+
+
+}
